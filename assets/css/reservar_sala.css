@@ -1,0 +1,26 @@
+/* Container Flex */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilo dos Cards */
+.card {
+    flex: 0 0 calc(48% - 10px); /* Largura dos cards com um pequeno espaço entre eles */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.status {
+    color: green; /* Cor padrão para disponível */
+}
+
+/* Pode adicionar classes para outros status. Por exemplo, se a sala não estiver disponível: */
+.status-unavailable {
+    color: red;
+}

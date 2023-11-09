@@ -25,7 +25,6 @@
     <!-- Conteúdo Principal -->
     <div class="container mt-4">
         <div class="row flex-container">
-
             <!-- Estes são exemplos de cards. Repita para cada sala. -->
             <div class="col-md-6">
                 <div class="card mb-4">
@@ -33,192 +32,240 @@
                     <div class="card-body">
                         <p>Status: <span class="status">Disponível</span></p>
                         <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- ... Repita os cards conforme necessário ... -->
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 2</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 3</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 4</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 5</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 6</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 7</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 8</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 9</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <div class="card-header">Sala 10</div>
-                    <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
-                        <p>Reservar por:
-                            <select class="hours-select">
-                                <option value="1">1 hora</option>
-                                <option value="2">2 horas</option>
-                                <option value="3">3 horas</option>
-                                <option value="4">4 horas</option>
-                                <option value="5">5 horas</option>
-                            </select>
-                        </p>
-                        <button class="btn btn-primary">Reservar</button>
-                    </div>
-                </div>
-            </div>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
 
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-header">Sala 1</div>
+                    <div class="card-body">
+                        <p>Status: <span class="status">Disponível</span></p>
+                        <hr>
+                        <div class="form-group">
+                            <label for="data_reserva">Data da Reserva</label>
+                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_inicio">Hora de Início</label>
+                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término</label>
+                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                        </div>
+                        <button class="btn btn-primary">Reservar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

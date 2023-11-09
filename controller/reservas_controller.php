@@ -10,21 +10,17 @@ class ReservaController {
     }
 
     // Método para fazer uma reserva
-    public function fazerReserva($id_sala, $id_aluno, $data_inicio, $data_fim) {
+    public function fazerReserva($num_sala, $num_matricula, $hora_inicio, $hora_fim, $data_reserva) {
         
         // Verificar a disponibilidade da sala primeiro
-        if ($this->model->isSalaDisponivel($id_sala, $data_inicio, $data_fim)) {
+        if ($this->model->isSalaDisponivel($num_sala, $hora_inicio, $hora_fim)) {
             
             // Se a sala estiver disponível, proceder com a reserva
-            $sucesso = $this->model->create($id_sala, $id_aluno, $data_inicio, $data_fim);
+            $sucesso = $this->model->create($num_sala, $num_matricula, $hora_inicio, $hora_fim, $data_reserva);
             
             if ($sucesso) {
                 // Reserva efetuada com sucesso
-                header('Location: minhas_reservas.php?status=success');
-            } else {
-                // Erro ao fazer reserva
-                header('Location: reservar_sala.php?status=error');
-            }
+                $status_sala = "Ocu";
             
         } else {
             // Sala não está disponível para o horário desejado
@@ -33,8 +29,8 @@ class ReservaController {
     }
 
     // Método para listar reservas de um aluno específico
-    public function listarReservas($id_aluno) {
-        return $this->model->readByAluno($id_aluno);
+    public function listarReservas($num_matricula) {
+        return $this->model->readByAluno($num_matricula);
     }
 
     // Método para cancelar uma reserva

@@ -18,7 +18,7 @@ class Reserva {
     }
 
     // Criar uma nova reserva
-    public function create() {
+    public function createReserva() {
         $query = "INSERT INTO " . $this->table_name . " (num_matricula, num_sala, hora_inicio, hora_fim, data_reserva) VALUES (?, ?, ?, ?, ?)";
         
         $stmt = $this->conn->prepare($query);
@@ -36,7 +36,7 @@ class Reserva {
     }
 
     // Ler reservas de um aluno específico
-    public function readByAluno() {
+    public function readByAlunoReservas() {
         $query = "SELECT * FROM " . $this->table_name . " WHERE num_matricula = ? ORDER BY hora_inicio DESC";
 
         $stmt = $this->conn->prepare($query);
@@ -47,7 +47,7 @@ class Reserva {
     }
 
     // Deletar uma reserva
-    public function delete() {
+    public function deleteReserva() {
         $query = "DELETE FROM " . $this->table_name . " WHERE id_reserva = ?";
 
         $stmt = $this->conn->prepare($query);
@@ -74,6 +74,11 @@ class Reserva {
             return true;
         }
         return false;
+    }
+
+    public function consultarHorariosDisponiveis($data_reserva) {
+        // Lógica para consultar no banco e obter os horários disponíveis e ocupados
+        // Retorne um array ou objeto com esses horários
     }
 
     // Ler todas as reservas

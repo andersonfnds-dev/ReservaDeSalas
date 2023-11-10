@@ -27,6 +27,7 @@ class ReservaController {
             header('Location: reservar_sala.php?status=unavailable');
         }
     }
+}
 
     // Método para listar reservas de um aluno específico
     public function listarReservas($num_matricula) {
@@ -47,3 +48,7 @@ class ReservaController {
     // ... Outros métodos conforme necessário ...
 
 }
+?>
+
+    
+

@@ -30,21 +30,19 @@
                 <div class="card mb-4">
                     <div class="card-header">Sala 1</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva1" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio1" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim1" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -52,23 +50,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 2</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva2" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio2" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim2" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -76,23 +72,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 3</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva3" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio3" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim3" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -100,23 +94,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 4</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva4" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio4" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim4" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -124,23 +116,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 5</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva5" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio5" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim5" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -148,23 +138,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 6</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva6" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio6" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim6" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -172,23 +160,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 7</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva7" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio7" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim7" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -196,23 +182,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 8</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva8" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio8" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim8" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -220,23 +204,21 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 9</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva9" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio9" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim9" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
                     </div>
@@ -244,33 +226,30 @@
             </div>
             <div class="col-md-6">
                 <div class="card mb-4">
-                    <div class="card-header">Sala 1</div>
+                    <div class="card-header">Sala 10</div>
                     <div class="card-body">
-                        <p>Status: <span class="status">Disponível</span></p>
-                        <hr>
                         <div class="form-group">
                             <label for="data_reserva">Data da Reserva</label>
-                            <input type="date" class="form-control" id="data_reserva" name="data_reserva" required>
+                            <input type="date" class="form-control" id="data_reserva10" name="data_reserva" required>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio" name="hora_inicio" required>
+                            <input type="time" class="form-control" id="hora_inicio10" name="hora_inicio" required disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="hora_fim">Hora de Término</label>
-                            <input type="time" class="form-control" id="hora_fim" name="hora_fim" required>
+                            <input type="time" class="form-control" id="hora_fim10" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+
+                        <button class="btn btn-primary" id="btnReservar">Reservar</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
+
+                <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+                <script src="../assets/css/js/jqueryCamposHorario.js"></script>
 </body>
-
-
 
 </html>

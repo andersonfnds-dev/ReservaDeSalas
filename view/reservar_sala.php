@@ -34,7 +34,12 @@
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva1" name="data_reserva" required>
                         </div>
-
+                        <div class="form-group">
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="hora_inicio">Hora de Início</label>
                             <input type="time" class="form-control" id="hora_inicio1" name="hora_inicio" required disabled>
@@ -249,7 +254,9 @@
 
 
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-                <script src="../assets/css/js/jqueryCamposHorario.js"></script>
+                <script src="../assets/js/jqueryCamposHorario.js"></script>
+                <script src="../assets/js/ajaxHorariosDisponiveis.js"></script>
+
 </body>
 
 </html>

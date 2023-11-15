@@ -2,7 +2,6 @@
 $(document).ready(function () {
     // Função para verificar os horários disponíveis ao selecionar uma data
     function verificarHorariosDisponiveis(dataReserva) {
-        console.log("Testeeeeee");
         $.ajax({
             url: '../controller/reservas_controller.php',
             method: 'POST',

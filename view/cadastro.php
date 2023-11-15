@@ -87,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Inclua o script do SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../assets/js/ajaxContainers.js"></script>
+    <script src="../assets/js/ajaxEnvioFormularios.js"></script>
 </body>
 
 </html>

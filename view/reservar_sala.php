@@ -14,7 +14,7 @@
     <!-- Navegação -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="path/to/your/logo.png" alt="Logo" style="width: 50px;"> <!-- Caminho para o seu logo -->
+        <img src="../assets/image/MyLibrary.png" alt="Logo" style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
         </a>
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="reservar_sala.php">Reservar Sala</a>

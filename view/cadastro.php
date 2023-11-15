@@ -30,59 +30,66 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Reserva de Salas</title>
-    <link rel="stylesheet" href="../assets/css/reservar_sala.css"> <!-- Caminho para o seu CSS -->
+    <link rel="stylesheet" href="../assets/css/reservar_salas.css"> <!-- Caminho para o seu CSS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   
 </head>
 
-<body>
+<body class = "container-body">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="container-nav">
         <a class="navbar-brand" href="#">
-            <img src="path/to/your/logo.png" alt="Logo" style="width: 50px;"> <!-- Caminho para o seu logo -->
+            <img src="../assets/image/MyLibrary.png" alt="Logo" style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
         </a>
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="reservar_sala.php">Area do Alunos</a>
+            <a class="style-nav" href="reservar_sala.php">MyLibrary</a>
 
         </div>
     </nav>
-
+    <div class = "container-geral">
     <form method="post" action="cadastro.php" autocomplete="off" style="display:none;" id="ContainerCadastro">
-        <div class="container mt-4">
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <label for="matricula" class="card-header">Matrícula:</label>
-                    <input class="form-control" id="matricula" name="num_matricula" required>
-                    <label for="nome" class="card-header">Nome:</label>
-                    <input type="text" class="form-control" id="nome" name="nome" required><br>
+   
+            <div class="container-login-cadastro">
+                <div class="style-login-cadastro">
+                    <label for="matricula" class="style-label">Matrícula:</label>
+                    <input class="style-input" id="matricula" name="num_matricula" required>
+                    <label for="nome" class="style-label">Nome:</label>
+                    <input type="text" class="style-input" id="nome" name="nome" required><br>
 
-                    <label for="email" class="card-header">E-mail:</label>
-                    <input type="email" class="form-control" name="email" required><br>
+                    <label for="email" class="style-label">E-mail:</label>
+                    <input type="email" class="style-input" name="email" required><br>
 
-                    <label for="senha" class="card-header">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required><br>
+                    <label for="senha" class="style-label">Senha:</label>
+                    <input type="password" class="style-input" name="senha" required><br>
 
-                    <input type="submit" class="btn btn-primary" value="Cadastrar" name="submit">
-                    <a href=# id="switchToLogin">Voltar para  tela de Login</a>
+                    <input type="submit" class="style-botton" value="Cadastrar" name="submit">
+                    <a href=# id="switchToLogin">Voltar para a tela de Login</a>
 
                 </div>
             </div>
-        </div>
+       
+    
     </form>
-    <form method="post" action="cadastro.php" autocomplete="off" id="ContainerLogin">
-        <div class="container mt-4">
-            <div class="col-md-6">
-                <div class="card mb-4">
-                    <label for="matricula" class="card-header">Matrícula:</label>
-                    <input class="form-control" id="matricula" name="num_matricula" required>
-                    <label for="senha" class="card-header">Senha:</label>
-                    <input type="password" class="form-control" name="senha" required><br>
-                    <input type="submit" class="btn btn-primary" value="Login" name="submitLogin">
+
+
+    
+        <form method="post" action="cadastro.php" autocomplete="off" id="ContainerLogin">
+        
+            <div class="container-login-cadastro">
+                <div class="style-login-cadastro">
+                    <label for="matricula" class="style-label">Matrícula:</label>
+                    <input class="style-input" id="matricula" name="num_matricula" required>
+                    <label for="senha" class="style-label">Senha:</label>
+                    <input type="password" class="style-input" name="senha" required><br>
+                    <input type="submit" class="style-botton" value="Login" name="submitLogin">
                     <a href=# id="switchToCadastro">Cadastre-se</a>
 
                 </div>
             </div>
-        </div>
-    </form>
+        
+        </form>
+   
+    </div>
     
     <!-- Inclua o script do SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

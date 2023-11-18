@@ -12,8 +12,11 @@ class AlunoController
     }
 
     // Método para criar um novo aluno
-    public function criarAluno($num_matricula, $nome, $email, $senha)
+    public function cadastrarAluno($num_matricula, $nome, $email, $senha, $confirmaSenha)
     {
+        
+
+
         $sucesso = $this->model->createAluno($num_matricula, $nome, $email, $senha);
 
         if ($sucesso) {

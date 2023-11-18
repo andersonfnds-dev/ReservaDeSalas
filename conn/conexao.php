@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = 'localhost';
-    private $db_name = 'reserva_salas';
+    private $db_name = 'db_reserva_salas';
     private $username = 'root';
     private $password = '';
     public $conn;

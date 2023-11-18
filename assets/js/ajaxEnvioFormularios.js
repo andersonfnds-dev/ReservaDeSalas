@@ -1,31 +1,58 @@
-
-// script do AJAX para o formulário de cadastro
 $(document).ready(function () {
     $("#ContainerCadastro").on('submit', function (e) {
-        e.preventDefault(); // Adicionado para evitar a submissão padrão do formulário
+        e.preventDefault();
 
         $.ajax({
             type: "POST",
-            url: "../view/cadastro.php",
-            data: $(this).serialize,
-            success: function (response) {
-                if (response.status === "success") {
-                    // Em caso de sucesso, exibe a mensagem de cadastro bem-sucedido
+            url: "../controller/cadastro_aluno.php", // Alterado para o novo arquivo PHP
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (data) {
+                if (data.status === "success") {
                     Swal.fire({
                         icon: 'success',
                         title: 'Sucesso',
-                        text: 'Cadastro realizado com sucesso!',
+                        text: data.message,
                     });
-
                 } else {
-                    // Se houver algum erro, exibe a mensagem de erro
-                    echo
                     Swal.fire({
                         icon: 'error',
                         title: 'Erro',
-                        text: 'Erro ao cadastrar aluno.',
+                        text: data.message,
                     });
+                }
+            }
+        });
+    });
+});
 
+$(document).ready(function () {
+    $("#ContainerLogin").on('submit', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: "POST",
+            url: "../controller/login_aluno.php",
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (data) {
+                if (data.status === "success") {
+                    if (data.status === "success") {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Sucesso',
+                            text: data.message,
+                        }).then(function () {
+                            // Redireciona para a página inicial após o usuário clicar em OK
+                            window.location.href = "../view/reservar_sala.php";
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: data.message,
+                        });
+                    }
                 }
             }
         });

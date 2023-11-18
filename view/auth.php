@@ -1,31 +1,6 @@
 <?php
-include_once('../controller/alunos_controller.php');
-
-// Verificando se os dados do formulário foram submetidos
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    if (isset($_POST['submitLogin'])) {
-        // Sanitizando e pegando dados do formulário
-        $num_matricula = $_POST['num_matriculaLogin'];
-        $senha = $_POST["senhaLogin"];
-
-        $controller = new AlunoController();
-        $controller->login($num_matricula, $senha);
-    } elseif (isset($_POST['submitCadastro'])) {
-        // Sanitizando e pegando dados do formulário
-        $num_matricula = $_POST['num_matriculaCadastro'];
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $senha = $_POST["senhaCadastro"];
-        $confirmaSenha = $_POST["confirmaSenha"];
-
-        $controller = new AlunoController();
-        $controller->cadastrarAluno($num_matricula, $nome, $email, $senha, $confirmaSenha);
-    }
-}
+session_start();
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,9 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Inclua o CSS do SweetAlert2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-    <!-- Inclua o script do SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Reserva de Salas</title>
@@ -62,9 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="container-login-cadastro">
                 <div class="style-login-cadastro">
+                    <br>
                     <label for="matricula" class="style-label">Matrícula:</label>
                     <input class="style-input" id="matriculaCadastro" name="num_matriculaCadastro" required>
-
+                    <br>
                     <label for="nome" class="style-label">Nome:</label>
                     <input type="text" class="style-input" id="nome" name="nome" required><br>
 
@@ -78,37 +53,39 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" class="style-input" name="confirmaSenha" required><br>
 
                     <input type="submit" class="style-botton" value="Cadastrar" name="submit">
+                    <br>
                     <a href=# id="switchToLogin">Voltar para a tela de Login</a>
+                    <br>
 
                 </div>
             </div>
-
-
         </form>
+        <br><br>
 
         <form method="post" autocomplete="off" id="ContainerLogin">
 
             <div class="container-login-cadastro">
                 <div class="style-login-cadastro">
+                    <br>
                     <label for="matricula" class="style-label">Matrícula:</label>
                     <input class="style-input" id="matriculaLogin" name="num_matriculaLogin" required>
-
+                    <br>
                     <label for="senha" class="style-label">Senha:</label>
                     <input type="password" class="style-input" name="senhaLogin" required><br>
 
                     <input type="submit" class="style-botton" value="Login" name="submitLogin">
-
+                    <br>
                     <a href=# id="switchToCadastro">Cadastre-se</a>
-
+                    <br>
                 </div>
             </div>
-
         </form>
+        
 
     </div>
 
     <!-- Inclua o script do SweetAlert2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"></script>
     <script src="../assets/js/ajaxContainers.js"></script>
     <script src="../assets/js/ajaxEnvioFormularios.js"></script>
 </body>

@@ -25,3 +25,56 @@
 .status-unavailable {
     color: red;
 }
+.container-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F2ACB2;
+}
+.style-nav{
+    font-weight: bold;
+    color: #6351a4;
+}
+.container-body{
+    
+    background-color: #9184bf;
+}
+.container-login-cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+.style-login-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#F2ACB2 ;
+    width: 60vb;
+    margin-top: 10vh;
+    border: 1px solid#27214d;
+    border-radius: 12px;
+    
+
+}
+.style-label{
+    display: flex;
+    color:#6351a4;
+    font-weight: bold;
+    
+    
+    
+}
+
+.style-input{
+    border: 1px solid#27214d; /* Cor e espessura da borda */
+    padding: 8px; /* Espaçamento interno do conteúdo */
+    border-radius: 10px;
+}
+.style-botton{
+    background-color:#6351a4;
+    color: white;
+    border-radius: 5px;
+}
+

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("Testeeeeee");
     // Itera sobre as 10 salas
     for (let i = 1; i <= 10; i++) {
         const dataReservaSelector = `#data_reserva${i}`;

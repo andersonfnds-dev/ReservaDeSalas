@@ -37,22 +37,20 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 if (data.status === "success") {
-                    if (data.status === "success") {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Sucesso',
-                            text: data.message,
-                        }).then(function () {
-                            // Redireciona para a página inicial após o usuário clicar em OK
-                            window.location.href = "../view/reservar_sala.php";
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Erro',
-                            text: data.message,
-                        });
-                    }
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Sucesso',
+                        text: data.message,
+                    }).then(function () {
+                        // Redireciona para a página inicial após o usuário clicar em OK
+                        window.location.href = "../view/reservar_sala.php";
+                    });
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: data.message,
+                    });
                 }
             }
         });

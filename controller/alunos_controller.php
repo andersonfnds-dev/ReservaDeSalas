@@ -90,7 +90,7 @@ class AlunoController
             session_start();
 
             // Guarda informações do usuário na sessão
-            $_SESSION['user_data'] = $login_result;
+            $_SESSION['num_matricula'] = $num_matricula;
         } else {
             // Login falhou
             $response['message'] = 'Matrícula ou senha incorretas!';

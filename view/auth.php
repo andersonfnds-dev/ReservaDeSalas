@@ -23,11 +23,11 @@ session_start();
 
     <nav class="container-nav">
         <a class="navbar-brand" href="#">
-            <img src="../assets/image/MyLibrary.png" alt="Logo"
+            <img src="../assets/image/EasyRooms.png" alt="Logo"
                 style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
         </a>
         <div class="navbar-nav">
-            <a class="style-nav" href="">MyLibrary</a>
+            <a class="style-nav" href="">EasyRooms</a>
 
         </div>
     </nav>

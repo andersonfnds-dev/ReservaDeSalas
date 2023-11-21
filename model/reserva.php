@@ -23,22 +23,53 @@ class Reserva
     }
 
     // Criar uma nova reserva
-    public function createReserva()
+    public function fazerReserva($num_matricula, $num_sala, $hora_inicio, $hora_fim, $data_reserva)
     {
-        $query = "INSERT INTO " . $this->table_name . " (num_matricula, num_sala, hora_inicio, hora_fim, data_reserva) VALUES (?, ?, ?, ?, ?)";
+        // Verificar se o horário está ocupado
+        if (!$this->horarioOcupado($num_sala, $hora_inicio, $hora_fim, $data_reserva)) {
+            // Horário disponível, fazer a reserva
 
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->num_matricula);
-        $stmt->bindParam(2, $this->num_sala);
-        $stmt->bindParam(3, $this->hora_inicio);
-        $stmt->bindParam(4, $this->hora_fim);
-        $stmt->bindParam(5, $this->data_reserva);
+            // Prepare a consulta para inserir a reserva
+            $consulta = $this->conn->prepare("INSERT INTO reservas (num_matricula, num_sala, hora_inicio, hora_fim, data_reserva) VALUES (:num_matricula, :num_sala, :hora_inicio, :hora_fim, :data_reserva)");
 
+            // Bind dos parâmetros
+            $consulta->bindParam(':num_matricula', $num_matricula);
+            $consulta->bindParam(':num_sala', $num_sala);
+            $consulta->bindParam(':hora_inicio', $hora_inicio);
+            $consulta->bindParam(':hora_fim', $hora_fim);
+            $consulta->bindParam(':data_reserva', $data_reserva);
 
-        if ($stmt->execute()) {
+            // Executar a consulta
+            $consulta->execute();
+
+            // Retornar algum indicador de sucesso se necessário
             return true;
+        } else {
+            // Horário ocupado, retornar indicador de falha ou mensagem
+            return false;
         }
-        return false;
+    }
+
+    // Função para verificar se o horário está ocupado
+    private function horarioOcupado($num_sala, $hora_inicio, $hora_fim, $data_reserva)
+    {
+        // Consulta para verificar se há reservas que ocupam o mesmo horário
+        $consulta = $this->conn->prepare("SELECT COUNT(*) AS total_reservas FROM reservas WHERE num_sala = :num_sala AND data_reserva = :data_reserva AND ((hora_inicio >= :hora_inicio AND hora_inicio < :hora_fim) OR (hora_fim > :hora_inicio AND hora_fim <= :hora_fim))");
+
+        // Bind dos parâmetros
+        $consulta->bindParam(':num_sala', $num_sala);
+        $consulta->bindParam(':hora_inicio', $hora_inicio);
+        $consulta->bindParam(':hora_fim', $hora_fim);
+        $consulta->bindParam(':data_reserva', $data_reserva);
+
+        // Executar a consulta
+        $consulta->execute();
+
+        // Obter o resultado
+        $totalReservas = $consulta->fetch(PDO::FETCH_ASSOC)['total_reservas'];
+
+        // Se houver pelo menos uma reserva, o horário está ocupado
+        return $totalReservas > 0;
     }
 
     // Ler reservas de um aluno específico

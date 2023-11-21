@@ -14,16 +14,24 @@ class ReservaController
     // Método para fazer uma reserva
     public function fazerReserva($num_sala, $num_matricula, $hora_inicio, $hora_fim, $data_reserva)
     {
+        $response = [
+            'status' => 'error',
+            'message' => 'Matrícula ou senha incorretas!'
+        ];
         // Se a sala estiver disponível, proceder com a reserva
-        $sucesso = $this->model->createReserva($num_sala, $num_matricula, $hora_inicio, $hora_fim, $data_reserva);
+        $reservaSucesso = $this->model->fazerReserva($num_sala, $num_matricula, $hora_inicio, $hora_fim, $data_reserva);
 
-        if ($sucesso) {
-            // Reserva efetuada com sucesso
-            $status_sala = "Ocu";
+        if ($reservaSucesso) {
+            // Reserva bem-sucedida
+            $response['status'] = 'success';
+            $response['message'] = 'Reserva realizada com sucesso!';
         } else {
-            // Sala não está disponível para o horário desejado
-            header('Location: reservar_sala.php?status=unavailable');
+            // Horário ocupado, informe o usuário
+            $response['message'] = 'Horário indisponível! Selecione outro horário.';
         }
+
+        echo json_encode($response);
+        exit;
     }
 
     public function verificarHorariosDisponiveis($data_reserva, $num_sala)

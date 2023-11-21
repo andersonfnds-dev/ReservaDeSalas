@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['user_data'])) {
+if (!isset($_SESSION['num_matricula'])) {
     header('Location: auth.php');
     exit();
 }
@@ -13,8 +13,10 @@ if (!isset($_SESSION['user_data'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
     <title>Reserva de Salas</title>
     <link rel="stylesheet" href="../assets/css/reservar_salas.css"> <!-- Caminho para o seu CSS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +24,7 @@ if (!isset($_SESSION['user_data'])) {
     <!-- Navegação -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="../assets/image/MyLibrary.png" alt="Logo"
+            <img src="../assets/image/EasyRooms.png" alt="Logo"
                 style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
         </a>
         <div class="navbar-nav">
@@ -59,7 +61,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim1" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar1">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -88,7 +90,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim2" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar2">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -117,7 +119,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim3" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar3">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -146,7 +148,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim4" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar4">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -175,7 +177,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim5" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar5">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -204,7 +206,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim6" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar6">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -233,7 +235,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim7" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar7">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -262,7 +264,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim8" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar8">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -291,7 +293,7 @@ if (!isset($_SESSION['user_data'])) {
                             <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim9" name="hora_fim" required disabled>
                         </div>
-                        <button class="btn btn-primary">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar9">Reservar</button>
                     </div>
                 </div>
             </div>
@@ -321,14 +323,15 @@ if (!isset($_SESSION['user_data'])) {
                             <input type="time" class="form-control" id="hora_fim10" name="hora_fim" required disabled>
                         </div>
 
-                        <button class="btn btn-primary" id="btnReservar">Reservar</button>
+                        <button class="btn btn-primary" id="btnReservar10" >Reservar</button>
                     </div>
                 </div>
 
 
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"></script>
                 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
                 <script src="../assets/js/jqueryCamposHorario.js"></script>
-                <script src="../assets/js/ajaxHorariosDisponiveis.js"></script>
+                
 
 </body>
 

@@ -3,7 +3,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
 }
 
 /* Estilo dos Cards */
@@ -17,64 +16,54 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.horario-disponivel {
-    color: green; /* Cor padrão para disponível */
+/* Restante do Estilo */
+.container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a47b3;
 }
 
-/* Pode adicionar classes para outros status. Por exemplo, se a sala não estiver disponível: */
-.horario-ocupado {
-    color: red;
-}
-.container-nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F2ACB2;
-}
-.style-nav{
+.style-nav {
     font-weight: bold;
-    color: #6351a4;
+    color: #b578f8;
 }
-.container-body{
-    
-    background-color: #9184bf;
+
+.container-body {
+    background-color: #faf4f4;
 }
-.container-login-cadastro{
+
+.container-login-cadastro {
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
 }
+
 .style-login-cadastro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#F2ACB2 ;
+    background-color: #6a47b3;
     width: 60vb;
     margin-top: 10vh;
-    border: 1px solid#27214d;
+    border: 1px solid #27214d;
     border-radius: 12px;
-    
-
 }
-.style-label{
+
+.style-label {
     display: flex;
-    color:#6351a4;
+    color: rgb(212, 191, 234);
     font-weight: bold;
-    
-    
-    
 }
 
-.style-input{
-    border: 1px solid#27214d; /* Cor e espessura da borda */
-    padding: 8px; /* Espaçamento interno do conteúdo */
+.style-input {
+    border: 1px solid #27214d;
+    padding: 8px;
     border-radius: 10px;
 }
-.style-botton{
-    background-color:#6351a4;
+
+.style-botton {
+    background-color: #382472;
     color: white;
     border-radius: 5px;
 }
-

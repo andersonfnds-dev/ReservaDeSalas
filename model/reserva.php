@@ -73,15 +73,20 @@ class Reserva
     }
 
     // Ler reservas de um aluno específico
-    public function readByAlunoReservas()
+    public function readByAlunoReservas($num_matricula)
     {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE num_matricula = ? ORDER BY hora_inicio DESC";
-
+    
+        $query = "SELECT * FROM " . $this->table_name . " WHERE num_matricula = ? ORDER BY data_reserva DESC";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->num_matricula);
+        $stmt->bindParam(1, $num_matricula);
         $stmt->execute();
 
-        return $stmt;
+        
+        if ($stmt->rowCount() > 0) {
+            return $stmt;
+        } else {
+            return "Nenhuma reserva encontrada para a matrícula indicada.";
+        }
     }
 
     // Deletar uma reserva

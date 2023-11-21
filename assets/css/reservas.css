@@ -1,0 +1,56 @@
+/* Estilo da Navbar */
+.navbar.bg-light {
+    background-color: #6a47b3!important;
+}
+
+.navbar-nav .nav-item {
+    color: #b578f8;
+}
+
+/* Estilo dos Cards de Reserva */
+.card {
+    flex: 0 0 calc(48% - 10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    background-color: #6a47b3; /* Cor de fundo */
+    color: #d4bfea; /* Cor do texto */
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Restante do Estilo para os Cards de Reserva */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a47b3;
+}
+
+.style-nav {
+    font-weight: bold;
+    color: #b578f8;
+}
+
+.container-body {
+    background-color: #faf4f4;
+}
+
+/* Estilo dos Campos de Reserva */
+.container-mt-4 {
+    margin-top: 4rem; /* Adapte conforme necessário */
+}
+
+/* Estilo dos Botões de Reserva */
+.btn-primary {
+    background-color: #382472;
+    color: white;
+    border-radius: 5px;
+}

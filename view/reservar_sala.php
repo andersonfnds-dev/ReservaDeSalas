@@ -15,7 +15,7 @@ if (!isset($_SESSION['num_matricula'])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.min.css">
     <title>Reserva de Salas</title>
-    <link rel="stylesheet" href="../assets/css/reservar_salas.css"> <!-- Caminho para o seu CSS -->
+    <link rel="stylesheet" href="../assets/css/reservas.css"> <!-- Caminho para o seu CSS -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 

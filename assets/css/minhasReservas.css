@@ -1,0 +1,26 @@
+.navbar.bg-light {
+    background-color: #6a47b3!important;
+}
+
+.navbar-nav .nav-item {
+    color: #b578f8;
+}
+
+#areaReservas {
+    /* Adicione estilos básicos, como altura e largura */
+    min-height: 100px;
+    width: 100%;
+    background-color: #b578f8; /* Cor de fundo de exemplo */
+}
+
+.card {
+    /* Estilos para o card de reserva */
+    border: 1px solid #0f0e0e;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#areaReservas p {
+    color: #000; /* Cor do texto de exemplo */
+    font-size: 14px; /* Tamanho da fonte de exemplo */
+}

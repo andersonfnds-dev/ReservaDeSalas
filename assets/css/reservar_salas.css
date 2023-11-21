@@ -17,12 +17,12 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.status {
+.horario-disponivel {
     color: green; /* Cor padrão para disponível */
 }
 
 /* Pode adicionar classes para outros status. Por exemplo, se a sala não estiver disponível: */
-.status-unavailable {
+.horario-ocupado {
     color: red;
 }
 .container-nav{

@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include_once '../conn/conexao.php';
 
 class Reserva
@@ -82,60 +85,94 @@ class Reserva
         return false;
     }
 
-    public function consultarHorariosDisponiveis($data_reserva)
+    public function consultarHorariosDisponiveis($data_reserva, $num_sala)
     {
 
-        $conn = $this->conn;
-
         // Prepare a consulta para obter as reservas para a data dada
-        $consulta = $this->$conn->prepare("SELECT hora_inicio, hora_fim FROM reservas WHERE data_reserva = :data_reserva");
+        $consulta = $this->conn->prepare("SELECT COUNT(*) AS total_reservas FROM reservas WHERE num_sala = :num_sala AND data_reserva = :data_reserva");
+        $consulta->bindParam(':num_sala', $num_sala);
         $consulta->bindParam(':data_reserva', $data_reserva);
         $consulta->execute();
-        if (!$consulta->execute()) {
-            die(print_r($consulta->errorInfo(), true)); // Isso exibirá informações de erro
-        }
 
-        // Obtenha os horários ocupados
-        $horarios_ocupados = [];
-        while ($reserva = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $horarios_ocupados[] = [
-                'hora_inicio' => $reserva['hora_inicio'],
-                'hora_fim' => $reserva['hora_fim']
-            ];
-        }
+        $totalReservas = $consulta->fetch(PDO::FETCH_ASSOC)['total_reservas'];
 
-        // Defina o intervalo de horários disponíveis (assumindo, por exemplo, que vai de 8:00 às 22:00)
         $horarios_disponiveis = [];
         $hora_atual = strtotime('08:00');
         $hora_final = strtotime('22:00');
 
-        // Gere os horários disponíveis excluindo os horários ocupados
-        while ($hora_atual <= $hora_final) {
-            $hora_inicio = date('H:i', $hora_atual);
-            $hora_fim = date('H:i', $hora_atual + 60 * 60); // Adiciona uma hora
+        if ($totalReservas > 0) {
+            // Há reservas, então verificamos os horários ocupados
 
-            // Verifica se o horário está ocupado
-            $ocupado = false;
-            foreach ($horarios_ocupados as $horario_ocupado) {
-                if ($hora_inicio >= $horario_ocupado['hora_inicio'] && $hora_inicio < $horario_ocupado['hora_fim']) {
-                    $ocupado = true;
-                    break;
-                }
+            // Continue com a lógica atual para obter os horários ocupados
+            $consulta = $this->conn->prepare("SELECT hora_inicio, hora_fim FROM reservas WHERE num_sala = :num_sala AND data_reserva = :data_reserva");
+            $consulta->bindParam(':num_sala', $num_sala);
+            $consulta->bindParam(':data_reserva', $data_reserva);
+            $consulta->execute();
+
+            // Obtenha os horários ocupados
+            $horarios_ocupados = [];
+            while ($reserva = $consulta->fetch(PDO::FETCH_ASSOC)) {
+                $horarios_ocupados[] = [
+                    'hora_inicio' => $reserva['hora_inicio'],
+                    'hora_fim' => $reserva['hora_fim']
+                ];
             }
 
-            // Se não estiver ocupado, adiciona aos horários disponíveis
-            if (!$ocupado) {
+            // Gere os horários disponíveis excluindo os horários ocupados
+            while ($hora_atual <= $hora_final) {
+                $hora_inicio = date('H:i', $hora_atual);
+                $hora_fim = date('H:i', $hora_atual + 60 * 60); // Adiciona uma hora
+
+                // Verifica se o horário está ocupado
+                $ocupado = false;
+                foreach ($horarios_ocupados as $horario_ocupado) {
+                    if ($hora_inicio >= $horario_ocupado['hora_inicio'] && $hora_inicio < $horario_ocupado['hora_fim']) {
+                        $ocupado = true;
+                        break;
+                    }
+                }
+
+                // Se não estiver ocupado, adiciona aos horários disponíveis
+                if (!$ocupado) {
+                    $horarios_disponiveis[] = [
+                        'hora_inicio' => $hora_inicio,
+                        'hora_fim' => $hora_fim
+                    ];
+                }
+
+                // Avança para a próxima hora
+                if ($hora_atual != strtotime('22:00')) {
+                    $hora_atual += 60 * 60;
+                }
+            }
+        } else {
+
+            $hora_atual = strtotime('08:00');
+            $hora_final = strtotime('22:00');
+
+            $horarios_disponiveis = [];
+
+            // Gere os horários disponíveis excluindo os horários ocupados
+            while ($hora_atual <= $hora_final) {
+                $hora_inicio = date('H:i', $hora_atual);
+                $hora_fim = date('H:i', $hora_atual + 60 * 60); // Adiciona uma hora
+
                 $horarios_disponiveis[] = [
                     'hora_inicio' => $hora_inicio,
                     'hora_fim' => $hora_fim
                 ];
-            }
 
-            // Avança para a próxima hora
-            $hora_atual += 60 * 60;
+                $hora_atual += 60 * 60;
+            }
         }
 
-        return json_encode($horarios_disponiveis);
+        $htmlOptions = '';
+        foreach ($horarios_disponiveis as $horario) {
+            $htmlOptions .= '<option value="' . $horario['hora_inicio'] . '">' . $horario['hora_inicio'] . ' - ' . $horario['hora_fim'] . '</option>';
+        }
+
+        echo $htmlOptions;
+        exit;
     }
 
     // Ler todas as reservas

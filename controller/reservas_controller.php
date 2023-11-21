@@ -26,10 +26,10 @@ class ReservaController
         }
     }
 
-    public function verificarHorariosDisponiveis($data_reserva)
+    public function verificarHorariosDisponiveis($data_reserva, $num_sala)
     {
         // Consulta no banco de dados para obter os horários disponíveis e ocupados
-        $horarios_disponiveis = $this->model->consultarHorariosDisponiveis($data_reserva);
+        $horarios_disponiveis = $this->model->consultarHorariosDisponiveis($data_reserva, $num_sala);
 
         // Resposta Ajax com os horários
         echo json_encode($horarios_disponiveis);

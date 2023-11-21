@@ -119,21 +119,25 @@ class Reserva
             }
 
             // Gere os horários disponíveis excluindo os horários ocupados
-            while ($hora_atual <= $hora_final) {
+            while ($hora_atual < $hora_final) {
                 $hora_inicio = date('H:i', $hora_atual);
                 $hora_fim = date('H:i', $hora_atual + 60 * 60); // Adiciona uma hora
 
                 // Verifica se o horário está ocupado
                 $ocupado = false;
                 foreach ($horarios_ocupados as $horario_ocupado) {
-                    if ($hora_inicio >= $horario_ocupado['hora_inicio'] && $hora_inicio < $horario_ocupado['hora_fim']) {
+                    // Verifica se o horário de início ou o horário de fim da reserva estão dentro do intervalo
+                    if (
+                        ($hora_inicio >= $horario_ocupado['hora_inicio'] && $hora_inicio < $horario_ocupado['hora_fim']) ||
+                        ($hora_fim > $horario_ocupado['hora_inicio'] && $hora_fim <= $horario_ocupado['hora_fim'])
+                    ) {
                         $ocupado = true;
                         break;
                     }
                 }
 
-                // Se não estiver ocupado, adiciona aos horários disponíveis
-                if (!$ocupado) {
+                // Se não estiver ocupado e não ultrapassar as 22:00, adiciona aos horários disponíveis
+                if (!$ocupado && $hora_atual < strtotime('22:00')) {
                     $horarios_disponiveis[] = [
                         'hora_inicio' => $hora_inicio,
                         'hora_fim' => $hora_fim
@@ -141,26 +145,21 @@ class Reserva
                 }
 
                 // Avança para a próxima hora
-                if ($hora_atual != strtotime('22:00')) {
-                    $hora_atual += 60 * 60;
-                }
+                $hora_atual += 60 * 60;
             }
         } else {
-
-            $hora_atual = strtotime('08:00');
-            $hora_final = strtotime('22:00');
-
-            $horarios_disponiveis = [];
-
             // Gere os horários disponíveis excluindo os horários ocupados
             while ($hora_atual <= $hora_final) {
                 $hora_inicio = date('H:i', $hora_atual);
                 $hora_fim = date('H:i', $hora_atual + 60 * 60); // Adiciona uma hora
 
-                $horarios_disponiveis[] = [
-                    'hora_inicio' => $hora_inicio,
-                    'hora_fim' => $hora_fim
-                ];
+                // Se não ultrapassar as 22:00, adiciona aos horários disponíveis
+                if ($hora_atual <= strtotime('22:00')) {
+                    $horarios_disponiveis[] = [
+                        'hora_inicio' => $hora_inicio,
+                        'hora_fim' => $hora_fim
+                    ];
+                }
 
                 $hora_atual += 60 * 60;
             }

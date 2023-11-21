@@ -28,8 +28,14 @@ class ReservaController
 
     public function verificarHorariosDisponiveis($data_reserva, $num_sala)
     {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
         // Consulta no banco de dados para obter os horários disponíveis e ocupados
         $horarios_disponiveis = $this->model->consultarHorariosDisponiveis($data_reserva, $num_sala);
+
+        error_log("Horários disponíveis: " . print_r($horarios_disponiveis, true));
 
         // Resposta Ajax com os horários
         echo json_encode($horarios_disponiveis);

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['user_data'])){
+if (!isset($_SESSION['user_data'])) {
     header('Location: auth.php');
     exit();
 }
@@ -22,7 +22,8 @@ if(!isset($_SESSION['user_data'])){
     <!-- Navegação -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-        <img src="../assets/image/MyLibrary.png" alt="Logo" style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
+            <img src="../assets/image/MyLibrary.png" alt="Logo"
+                style="width: 60px;border: 1px solid #27214d;border-radius:70px ;"> <!-- Caminho para o seu logo -->
         </a>
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="reservar_sala.php">Reservar Sala</a>
@@ -44,17 +45,18 @@ if(!isset($_SESSION['user_data'])){
                         </div>
                         <div class="form-group">
                             <label for="horarios_disponiveis">Horários Disponíveis</label>
-                            <select class="form-control" id="horarios_disponiveis" name="horarios_disponiveis">
+                            <select class="form-control" id="horarios_disponiveis1" name="horarios_disponiveis">
                                 <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio1" name="hora_inicio" required disabled>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio1" name="hora_inicio" required
+                                disabled>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim1" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -69,14 +71,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva2" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio2" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis2" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio2" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim2" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -91,14 +100,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva3" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio3" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis3" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio3" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim3" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -113,14 +129,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva4" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio4" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis4" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio4" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim4" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -135,14 +158,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva5" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio5" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis5" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio5" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim5" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -157,14 +187,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva6" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio6" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis6" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio6" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim6" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -179,14 +216,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva7" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio7" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis7" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio7" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim7" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -201,14 +245,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva8" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio8" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis8" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio8" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim8" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -223,14 +274,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva9" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio9" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis9" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio9" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim9" name="hora_fim" required disabled>
                         </div>
                         <button class="btn btn-primary">Reservar</button>
@@ -245,14 +303,21 @@ if(!isset($_SESSION['user_data'])){
                             <label for="data_reserva">Data da Reserva</label>
                             <input type="date" class="form-control" id="data_reserva10" name="data_reserva" required>
                         </div>
-
                         <div class="form-group">
-                            <label for="hora_inicio">Hora de Início</label>
-                            <input type="time" class="form-control" id="hora_inicio10" name="hora_inicio" required disabled>
+                            <label for="horarios_disponiveis">Horários Disponíveis</label>
+                            <select class="form-control" id="horarios_disponiveis10" name="horarios_disponiveis">
+                                <!-- Opções de horários serão geradas dinamicamente pelo JavaScript -->
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="hora_fim">Hora de Término</label>
+                            <label for="hora_inicio">Hora de Início da Reserva</label>
+                            <input type="time" class="form-control" id="hora_inicio10" name="hora_inicio" required
+                                disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora_fim">Hora de Término da Reserva</label>
                             <input type="time" class="form-control" id="hora_fim10" name="hora_fim" required disabled>
                         </div>
 

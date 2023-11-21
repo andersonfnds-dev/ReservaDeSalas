@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="password" class="style-input" name="senha" required><br>
 
                     <input type="submit" class="style-botton" value="Cadastrar" name="submit">
-                    <a href=# id="switchToLogin">Voltar para a tela de Login</a>
+                    <a href=#  class = 'style-link'id="switchToLogin">Voltar para a tela de Login</a>
 
                 </div>
             </div>
@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <label for="senha" class="style-label">Senha:</label>
                     <input type="password" class="style-input" name="senha" required><br>
                     <input type="submit" class="style-botton" value="Login" name="submitLogin">
-                    <a href=# id="switchToCadastro">Cadastre-se</a>
+                    <a href=# class="style-link" id="switchToCadastro">Cadastre-se</a>
 
                 </div>
             </div>

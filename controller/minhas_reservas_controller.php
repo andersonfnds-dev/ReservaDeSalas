@@ -12,7 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = $reservasController->listarMinhasReservas($num_matricula);
 
         echo json_encode($result);
-        exit;
     } else {
         echo json_encode("Método de requisição inválido");
         exit;

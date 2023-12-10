@@ -7,7 +7,7 @@ $(document).ready(function () {
         success: function (response) {
             console.log('Reservas recebidas:', response);
             // Manipule os dados recebidos e exiba na página
-            exibirReservas(response);
+            exibirReservas(response.reservas);
         },
         error: function (error) {
             console.error('Erro ao obter reservas:', error.responseText);
@@ -17,26 +17,26 @@ $(document).ready(function () {
 
 // Função para exibir as reservas na página
 function exibirReservas(reservas) {
-    console.log('Chamando exibirReservas com reservas:', reservas);
+    console.log('Função exibirReservas chamada com reservas:', reservas);
 
     // Limpar qualquer conteúdo existente na área de exibição de reservas
     $('#areaReservas').empty();
 
     // Se não houver reservas, exibir uma mensagem
-    if (reservas.length === 0) {
+    if (!reservas || !reservas.length) {
+        console.log('Nenhuma reserva encontrada.');
         const semReservasElement = document.createElement('p');
         semReservasElement.innerText = 'Você não possui reservas.';
         $('#areaReservas').append(semReservasElement);
-        return;
-    }
+    } else {
+        console.log('Reservas encontradas:', reservas);
+        // Iterar sobre as reservas e adicionar elementos HTML
+        for (let i = 0; i < reservas.length; i++) {
+            const reserva = reservas[i];
+            console.log('Criando elemento para reserva:', reserva);
 
-    // Iterar sobre as reservas e adicionar elementos HTML
-    for (let i = 0; i < reservas.length; i++) {
-        const reserva = reservas[i];
-        console.log('Criando elemento para reserva:', reserva);
-
-        // Criar elemento HTML
-        const elementoReserva = `
+            // Criar elemento HTML
+            const elementoReserva = `
             <div class="card mb-4">
                 <div class="card-header">Reserva ${i + 1}</div>
                 <div class="card-body">
@@ -49,20 +49,13 @@ function exibirReservas(reservas) {
             </div>
         `;
 
-        // Adicionar o elemento à área de exibição
-        $('#areaReservas').append(elementoReserva);
+            // Adicionar o elemento à área de exibição
+            $('#areaReservas').append(elementoReserva);
+        }
     }
 }
 
-
-
-
 // Função para cancelar uma reserva
 function cancelarReserva(idReserva) {
-    // Implemente a lógica de cancelamento da reserva usando AJAX ou outra abordagem
-    // ...
-
-    // Atualize a exibição após o cancelamento
-    // Exemplo: recarregue as reservas
-    // $.ajax({ ... });
+    //
 }

@@ -15,6 +15,9 @@ $(document).ready(function () {
     });
 });
 
+// Função para formatar a data no formato "dd-mm-yyyy"
+
+
 // Função para exibir as reservas na página
 function exibirReservas(reservas) {
     console.log('Função exibirReservas chamada com reservas:', reservas);
@@ -48,7 +51,6 @@ function exibirReservas(reservas) {
                 </div>
             </div>
         `;
-
             // Adicionar o elemento à área de exibição
             $('#areaReservas').append(elementoReserva);
         }
@@ -57,5 +59,46 @@ function exibirReservas(reservas) {
 
 // Função para cancelar uma reserva
 function cancelarReserva(idReserva) {
-    //
+    // Confirmar se o usuário realmente deseja cancelar a reserva
+    Swal.fire({
+        title: 'Tem certeza?',
+        text: 'Você realmente deseja cancelar esta reserva?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Sim, cancelar!',
+        cancelButtonText: 'Não, volte às minhas reservas.'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Chamar a função do backend para cancelar a reserva
+            $.ajax({
+                url: '../controller/cancelar_reserva_controller.php', // Substitua pelo caminho correto
+                method: 'POST',
+                data: { id_reserva: idReserva },
+                dataType: 'json',
+                success: function (response) {
+                    if (response.status === "success") {
+                        Swal.fire({
+                            title: 'Reserva Cancelada!',
+                            text: response.message,
+                            icon: 'success'
+                        });
+
+                        // Atualizar a exibição das reservas após o cancelamento
+                        listarMinhasReservas(); // Adapte isso conforme necessário
+                    } else {
+                        Swal.fire({
+                            title: 'Erro!',
+                            text: response.message,
+                            icon: 'error'
+                        });
+                    }
+                },
+                error: function (error) {
+                    console.error('Erro ao cancelar reserva:', error.responseText);
+                }
+            });
+        }
+    });
 }

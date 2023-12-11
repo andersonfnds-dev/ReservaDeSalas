@@ -90,12 +90,12 @@ class Reserva
     }
 
     // Deletar uma reserva
-    public function deleteReserva()
+    public function deleteReserva($id_reserva)
     {
         $query = "DELETE FROM " . $this->table_name . " WHERE id_reserva = ?";
 
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(1, $this->id_reserva);
+        $stmt->bindParam(1, $id_reserva);
 
         if ($stmt->execute()) {
             return true;

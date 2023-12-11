@@ -61,9 +61,10 @@ class ReservaController
             $reservasArray = [];
 
             while ($row = $reservas->fetch(PDO::FETCH_ASSOC)) {
+                $dataFormatada = date('d-m-Y', strtotime($row['data_reserva']));
                 $reservasArray[] = [
                     'id' => $row['id_reserva'],
-                    'dia' => $row['data_reserva'],
+                    'dia' => $dataFormatada,
                     'sala' => $row['num_sala'],
                     'hora_inicio' => $row['hora_inicio'],
                     'hora_fim' => $row['hora_fim'],
@@ -77,12 +78,21 @@ class ReservaController
     // Método para cancelar uma reserva
     public function cancelarReserva($id_reserva)
     {
+        $response = [
+            'status' => 'error',
+            'message' => 'Não foi possível cancelar sua reserva, tente novamente.'
+        ];
+
         $sucesso = $this->model->deleteReserva($id_reserva);
 
         if ($sucesso) {
-            header('Location: minhas_reservas.php?status=cancel_success');
+            $response['status'] = 'success';
+            $response['message'] = 'Reserva cancelada com sucesso!';
+            echo json_encode ($response);
+            exit;
         } else {
-            header('Location: minhas_reservas.php?status=cancel_error');
+            echo json_encode ($response);
+            exit;
         }
     }
 

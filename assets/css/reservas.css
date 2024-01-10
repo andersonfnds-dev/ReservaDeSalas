@@ -5,6 +5,7 @@
 
 .navbar-nav .nav-item {
     color: #b578f8;
+    
 }
 
 /* Estilo dos Cards de Reserva */
@@ -36,7 +37,7 @@
 
 .style-nav {
     font-weight: bold;
-    color: #b578f8;
+    color: #6a47b3;
 }
 
 .container-body {
@@ -54,3 +55,4 @@
     color: white;
     border-radius: 5px;
 }
+

@@ -19,7 +19,7 @@
     /* Estilos para o card de reserva */
     border: 1px solid #0f0e0e;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 5px;
     width: 300px; /* ou qualquer valor desejado para a largura do card */
     margin: 15px; /* ou qualquer valor desejado para a margem entre os cards */
 }

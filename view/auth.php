@@ -51,7 +51,7 @@ session_start();
 
                     <label for="senha" class="style-label">Confirme a sua senha:</label>
                     <input type="password" class="style-input" name="confirmaSenha" required><br>
-
+                    <br>
                     <input type="submit" class="style-botton" value="Cadastrar" name="submit">
                     <br>
                     <a href=# id="switchToLogin">Voltar para a tela de Login</a>
@@ -72,7 +72,7 @@ session_start();
                     <br>
                     <label for="senha" class="style-label">Senha:</label>
                     <input type="password" class="style-input" name="senhaLogin" required><br>
-
+                    <br>
                     <input type="submit" class="style-botton" value="Login" name="submitLogin">
                     <br>
                     <a href=# id="switchToCadastro">Cadastre-se</a>

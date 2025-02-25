@@ -32,7 +32,6 @@ class Aluno
         if ($stmt->execute()) {
             return true;
         } else {
-            // Adicione esta linha para obter informações de erro específicas
             $mensagem = print_r($stmt->errorInfo());
             return $mensagem;
         }
@@ -52,14 +51,11 @@ class Aluno
             $senhaNoBanco = $result[0]['senha'];
 
             if (password_verify($senha, $senhaNoBanco)) {
-                // Senha correta
                 return $result;
             } else {
-                // Matrícula ou senha incorretas
                 return false;
             }
         } else {
-            // Usuário não encontrado
             return false;
         }
     }

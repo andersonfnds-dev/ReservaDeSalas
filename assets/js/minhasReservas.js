@@ -6,17 +6,30 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (response) {
             console.log('Reservas recebidas:', response);
-            // Manipule os dados recebidos e exiba na página
             exibirReservas(response.reservas);
+            gerarGraficoReservas(response.reservas, 'semana'); // Padrão para esta semana
         },
         error: function (error) {
             console.error('Erro ao obter reservas:', error.responseText);
         }
     });
+
+    // Atualizar o gráfico quando o intervalo de tempo for alterado
+    $('#intervaloTempo').change(function () {
+        const intervalo = $(this).val();
+        $.ajax({
+            url: '../controller/minhas_reservas_controller.php',
+            method: 'POST',
+            dataType: 'json',
+            success: function (response) {
+                gerarGraficoReservas(response.reservas, intervalo);
+            },
+            error: function (error) {
+                console.error('Erro ao obter reservas:', error.responseText);
+            }
+        });
+    });
 });
-
-// Função para formatar a data no formato "dd-mm-yyyy"
-
 
 // Função para exibir as reservas na página
 function exibirReservas(reservas) {
@@ -101,4 +114,86 @@ function cancelarReserva(idReserva) {
             });
         }
     });
+}
+
+let reservasChart; // Variável para armazenar o gráfico
+
+// Função para gerar o gráfico de reservas
+function gerarGraficoReservas(reservas, intervalo) {
+    console.log('Função gerarGraficoReservas chamada com reservas:', reservas, 'e intervalo:', intervalo);
+
+    let labels = [];
+    let reservasCount = [];
+
+    // Filtrar as reservas com base no intervalo de tempo selecionado
+    let reservasFiltradas = reservas.filter(function(reserva) {
+        let date = moment(reserva.dia, 'DD-MM-YYYY');
+        let now = moment();
+
+        if (intervalo === 'semana') {
+            return date.isSame(now, 'week');
+        } else if (intervalo === 'mes') {
+            return date.isSame(now, 'month');
+        } else if (intervalo === 'ano') {
+            return date.isSame(now, 'year');
+        }
+        return false;
+    });
+
+    // Processa os dados para o gráfico
+    reservasFiltradas.forEach(function(reserva) {
+        let date = moment(reserva.dia, 'DD-MM-YYYY');
+        let label;
+        if (intervalo === 'semana') {
+            label = date.format('dddd'); // Dia da semana
+        } else if (intervalo === 'mes') {
+            label = date.format('D'); // Dia do mês
+        } else {
+            label = date.format('MMMM'); // Mês do ano
+        }
+
+        if (!labels.includes(label)) {
+            labels.push(label);
+            reservasCount[labels.indexOf(label)] = 1;
+        } else {
+            reservasCount[labels.indexOf(label)]++;
+        }
+    });
+
+    console.log('Labels para o gráfico:', labels);
+    console.log('Contagem de reservas para o gráfico:', reservasCount);
+
+    var ctx = document.getElementById('reservasChart');
+    if (ctx) {
+        ctx = ctx.getContext('2d');
+
+        // Destruir o gráfico existente, se houver
+        if (reservasChart) {
+            reservasChart.destroy();
+        }
+
+        // Criar um novo gráfico
+        reservasChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: intervalo === 'semana' ? 'Reservations by week days' : intervalo === 'mes' ? 'Reservations by month days' : 'Reservations by month',
+                    data: reservasCount,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    } else {
+        console.error('Elemento canvas com ID reservasChart não encontrado.');
+    }
 }

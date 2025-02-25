@@ -46,11 +46,28 @@ if (!isset($_SESSION['num_matricula'])) {
     </nav>
 
     <div class="container mt-4">
+    <div class="row mt-4">
+        <div class="col-12">
+            <label for="intervaloTempo">Choose the interval:</label>
+            <select id="intervaloTempo" class="form-control">
+                <option value="semana">Week</option>
+                <option value="mes">Month</option>
+                <option value="ano">Year</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <canvas id="reservasChart" width="400" height="200" style="margin-bottom: 3%;"></canvas>
+    </div>
+
         <div class="row" id="areaReservas">
             <!-- As reservas serão exibidas aqui -->
         </div>
+        
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.17/dist/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="../assets/js/minhasReservas.js"></script>

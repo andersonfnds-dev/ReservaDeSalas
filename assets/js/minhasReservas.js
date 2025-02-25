@@ -160,6 +160,20 @@ function gerarGraficoReservas(reservas, intervalo) {
         }
     });
 
+    // Ordenar os labels e reservasCount
+    if (intervalo === 'semana') {
+        const weekDaysOrder = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        labels = labels.sort((a, b) => weekDaysOrder.indexOf(a) - weekDaysOrder.indexOf(b));
+    } else if (intervalo === 'mes') {
+        labels = labels.sort((a, b) => a - b);
+    } else {
+        const monthsOrder = moment.months();
+        labels = labels.sort((a, b) => monthsOrder.indexOf(a) - monthsOrder.indexOf(b));
+    }
+
+    // Reordenar reservasCount de acordo com a nova ordem de labels
+    reservasCount = labels.map(label => reservasCount[labels.indexOf(label)]);
+
     console.log('Labels para o gráfico:', labels);
     console.log('Contagem de reservas para o gráfico:', reservasCount);
 

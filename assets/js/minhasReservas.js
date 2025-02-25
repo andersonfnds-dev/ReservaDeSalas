@@ -123,7 +123,7 @@ function gerarGraficoReservas(reservas, intervalo) {
     console.log('Função gerarGraficoReservas chamada com reservas:', reservas, 'e intervalo:', intervalo);
 
     let labels = [];
-    let reservasCount = [];
+    let reservasCount = {};
 
     // Filtrar as reservas com base no intervalo de tempo selecionado
     let reservasFiltradas = reservas.filter(function(reserva) {
@@ -154,13 +154,13 @@ function gerarGraficoReservas(reservas, intervalo) {
 
         if (!labels.includes(label)) {
             labels.push(label);
-            reservasCount[labels.indexOf(label)] = 1;
+            reservasCount[label] = 1;
         } else {
-            reservasCount[labels.indexOf(label)]++;
+            reservasCount[label]++;
         }
     });
 
-    // Ordenar os labels e reservasCount
+    // Ordenar os labels
     if (intervalo === 'semana') {
         const weekDaysOrder = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         labels = labels.sort((a, b) => weekDaysOrder.indexOf(a) - weekDaysOrder.indexOf(b));
@@ -172,10 +172,10 @@ function gerarGraficoReservas(reservas, intervalo) {
     }
 
     // Reordenar reservasCount de acordo com a nova ordem de labels
-    reservasCount = labels.map(label => reservasCount[labels.indexOf(label)]);
+    let reservasCountOrdenado = labels.map(label => reservasCount[label]);
 
     console.log('Labels para o gráfico:', labels);
-    console.log('Contagem de reservas para o gráfico:', reservasCount);
+    console.log('Contagem de reservas para o gráfico:', reservasCountOrdenado);
 
     var ctx = document.getElementById('reservasChart');
     if (ctx) {
